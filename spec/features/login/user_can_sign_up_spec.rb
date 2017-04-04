@@ -45,19 +45,41 @@ describe "A User Can Login" do
       expect(page).to have_content("Email has already been taken")
     end
 
-    xit "if I do not enter an email address I get an error message" do
+    it "if I do not enter an email address I get an error message" do
+      visit signup_path
 
-      expect(page).to have_content("Please enter an email address.")
+      fill_in "user_password", with: "quince"
+      fill_in "user_password_confirmation", with: "quince"
+
+      click_on 'Submit'
+
+      expect(current_path).to eq(signup_path)
+      expect(page).to have_content("Email can't be blank")
     end
 
-    xit "if I do not enter a password I get an error message" do
+    it "if I do not enter a password I get an error message" do
+      visit signup_path
 
-      expect(page).to have_content("Please enter and confirm your password.")
+      fill_in "user_email", with: "martha@marthastewart.com"
+
+      click_on 'Submit'
+
+      expect(current_path).to eq(signup_path)
+
+      expect(page).to have_content("Password can't be blank")
     end
 
-    xit "if I do not enter a matching password and password confirmation I get an error message" do
+    it "if I do not enter a matching password and password confirmation I get an error message" do
+      visit signup_path
 
-      expect(page).to have_content("Passwords do not match, please try again.")
+      fill_in "user_email", with: "martha@marthastewart.com"
+      fill_in "user_password", with: "quince"
+      fill_in "user_password_confirmation", with: "quincepaste"
+
+      click_on 'Submit'
+
+      expect(current_path).to eq(signup_path)
+      expect(page).to have_content("Password confirmation doesn't match Password")
     end
   end
 end

@@ -6,7 +6,7 @@ class Link < ActiveRecord::Base
   validates :url, :url => true
 
   # validate :url_is_valid
-  validates :url, uniqueness: true
+  validates_uniqueness_of :url, scope: :user_id
 
   belongs_to :user
 

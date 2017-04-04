@@ -17,5 +17,6 @@
     <% elsif !link.read %>
       <button>Mark as read</button>
     <% end %>
+    <%= link_to 'Edit', "/links/#{link.id}/edit" %>
   </div>
 <% end %>

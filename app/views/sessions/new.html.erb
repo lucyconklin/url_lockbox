@@ -1,3 +1,11 @@
 <h1>Log In or Sign Up</h1>
 
-<%= link_to 'Sign Up', signup_path %>
+<%= form_for @user, url: '/signin'  do |f| %>
+
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  <%= f.submit "Submit" %>
+
+<% end %>
+
+<p>Don't have an account? <%= link_to 'Sign Up', signup_path %> here</p>

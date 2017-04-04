@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :links, only: [:index]
   resources :users, only: [:create]
   get '/signup', to: 'users#new', as: 'signup'
-
-  get '/login', to: 'sessions#new', as: 'login'
+  get '/signin', to: 'sessions#new', as: 'signin'
+  post '/signin', to: 'sessions#create'
+  delete '/signout', to: 'sessions#destroy', as: 'signout'
 
   namespace :api do
     namespace :v1 do

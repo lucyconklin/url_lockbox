@@ -9,14 +9,16 @@
 <body>
   <section class="navbar">
   <% if current_user %>
-    <%= link_to "Log Out", '/logout' %>
+    <%= link_to "Sign Out", '/signout', method: 'delete' %>
   <% end %>
 </section>
 
 <section class="flash">
-<% if flash[:error] %>
-  <%= flash[:error] %>
-<% end %>
+  <% if flash.keys %>
+    <% flash.keys.each do |key| %>
+      <p><%= flash[key] %></p>
+    <% end %>
+  <% end %>
 </section>
 
 <div class="container">

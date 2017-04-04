@@ -41,6 +41,13 @@ RSpec.configure do |config|
   #### Database cleaner strategy
   #### Copied from https://github.com/DatabaseCleaner/database_cleaner#rspec-with-capybara-example
 
+  Shoulda::Matchers.configure do |config|
+    config.integrate do |with|
+      with.test_framework :rspec
+      with.library :rails
+    end
+  end
+
   config.use_transactional_fixtures = false
 
   config.before(:suite) do

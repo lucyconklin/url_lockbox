@@ -12,5 +12,10 @@
   <div class="link">
     <h2><%= link.title %></h2>
     <p><%= link.url %></p>
+    <% if link.read %>
+      <button>Mark as Unread</button>
+    <% elsif !link.read %>
+      <button>Mark as read</button>
+    <% end %>
   </div>
 <% end %>

@@ -3,6 +3,8 @@ require 'uri'
 class Link < ActiveRecord::Base
   validates :title, presence: true
   validates :url, presence: true
+  validates :url, :url => true
+
   # validate :url_is_valid
   validates :url, uniqueness: true
 

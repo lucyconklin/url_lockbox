@@ -31,8 +31,18 @@ describe "A User Can Login" do
       expect(page).to have_content("Log Out")
     end
 
-    xit "if I do not enter a unique email I get an error message" do
-      expect(page).to have_content("Email address is already taken, please enter a new email address.")
+    it "if I do not enter a unique email I get an error message" do
+      user = User.create(email:  "martha@marthastewart.com", password: "quince")
+      visit signup_path
+
+      fill_in "user_email", with: "martha@marthastewart.com"
+      fill_in "user_password", with: "quince"
+      fill_in "user_password_confirmation", with: "quince"
+
+      click_on 'Submit'
+
+      expect(current_path).to eq(signup_path)
+      expect(page).to have_content("Email has already been taken")
     end
 
     xit "if I do not enter an email address I get an error message" do

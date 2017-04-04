@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def new
+    @user = User.new
   end
 
   def create
@@ -9,6 +10,8 @@ class UsersController < ApplicationController
       session[:user_id] = user.id
       redirect_to links_path
     else
+      @user = user
+      flash[:error] = @user.errors.full_messages
       redirect_to '/signup'
     end
   end

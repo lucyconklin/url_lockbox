@@ -18,8 +18,17 @@ describe "A User Can Login" do
       expect(page).to have_content('Sign Up')
     end
 
-    xit "if I fill out all fields correctly I will be signed up and redirected to links_path" do
+    it "if I fill out all fields correctly I will be signed up and redirected to links_path" do
+      visit signup_path
 
+      fill_in "user_email", with: "martha@marthastewart.com"
+      fill_in "user_password", with: "quince"
+      fill_in "user_password_confirmation", with: "quince"
+
+      click_on 'Submit'
+
+      expect(current_path).to eq(links_path)
+      expect(page).to have_content("Log Out")
     end
 
     xit "if I do not enter a unique email I get an error message" do

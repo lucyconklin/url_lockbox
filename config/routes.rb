@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  root to: "links#index"
+  root to: 'sessions#new'
 
   resources :links, only: [:index]
+  # resources :users, only: [:new]
+  get '/login', to: 'sessions#new', as: 'login'
 
   namespace :api do
     namespace :v1 do

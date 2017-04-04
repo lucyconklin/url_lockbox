@@ -1,1 +1,9 @@
 <h1>All Links</h1>
+
+<%= form_for @link, url: '/links' do |f| %>
+
+  Url: <%= f.text_field :url %>
+  Title: <%= f.text_field :title %>
+  <%= f.submit "Submit" %>
+
+<% end %>

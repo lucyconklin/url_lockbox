@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "A User Can Login" do
+describe "A User Can Sign Up" do
   context "as a guest" do
     it "when I visit '/', I should be redirected and prompted to log in or sign up" do
       visit root_path
@@ -28,7 +28,7 @@ describe "A User Can Login" do
       click_on 'Submit'
 
       expect(current_path).to eq(links_path)
-      expect(page).to have_content("Log Out")
+      expect(page).to have_content("Sign Out")
     end
 
     it "if I do not enter a unique email I get an error message" do

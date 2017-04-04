@@ -12,6 +12,13 @@
     <%= link_to "Log Out", '/logout' %>
   <% end %>
 </section>
+
+<section class="flash">
+<% if flash[:error] %>
+  <%= flash[:error] %>
+<% end %>
+</section>
+
 <div class="container">
   <%= yield %>
 </div>

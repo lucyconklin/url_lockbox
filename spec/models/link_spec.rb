@@ -7,7 +7,7 @@ RSpec.describe Link, type: :model do
 
   context "validataions" do
     it { should validate_presence_of(:url) }
-    it { should validate_uniqueness_of(:url) }
+    it { should validate_uniqueness_of(:url).scoped_to(:user_id) }
     it { should validate_presence_of(:title) }
   end
 end

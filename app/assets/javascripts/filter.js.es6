@@ -6,6 +6,10 @@ function filterLinks(e) {
   e.preventDefault();
 
   var filter = $('input.search-box').val().toUpperCase();
-  var links = $('.link');
+  var $links = $('.link');
 
+  $links.show().filter(function(){
+    console.log($(this).find('h2').text())
+    return $(this).find('h2').text().toUpperCase() != filter
+  }).hide();
 }

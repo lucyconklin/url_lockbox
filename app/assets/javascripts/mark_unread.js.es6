@@ -11,7 +11,7 @@ function markAsUnRead(e) {
   $.ajax({
     type: "PATCH",
     url: "/api/v1/links/" + linkId,
-    data: { read: false },
+    data: { read: false, read_count: -1 },
   }).then((link) => {
     updateLinkStatus(link);
     updateButton(link);

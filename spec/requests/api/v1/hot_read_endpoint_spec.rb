@@ -5,7 +5,8 @@ describe "Hot Reads Endpoint" do
     user = User.create(email:  "martha@marthastewart.com", password: "quince")
     link = Link.create(url: 'http://www.horse.com',
                        title: "Why horses are the best",
-                       user_id: user.id)
+                       user_id: user.id,
+                       read_count: 4)
     link2 = Link.create(url: 'http://www.marthastewart.com/cookies',
                       title: "cookie website",
                       user_id: user.id)

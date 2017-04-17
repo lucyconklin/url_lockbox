@@ -22,7 +22,7 @@
 
 <section class="links">
   <% @links.each do |link| %>
-    <div class="link" id= <%=link.id %> >
+    <div class="link link-<%=  link.read  %>" id= <%=link.id %> >
       <h2><%= link.title %></h2>
       <p><%= link.url %></p>
       <p class="read-status"><%= link.read %></p>

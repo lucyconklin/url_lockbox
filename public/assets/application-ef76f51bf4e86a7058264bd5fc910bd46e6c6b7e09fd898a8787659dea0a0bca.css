@@ -1,0 +1,82 @@
+/* line 6, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/variables.sass */
+button, .button, .sign-in {
+  padding: 8px 10px;
+  border: 1px solid RGB(102, 102, 102);
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+}
+
+/* line 12, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/variables.sass */
+button:hover, .button:hover, .sign-in:hover {
+  background-color: RGB(219, 69, 69);
+  color: #fff;
+}
+
+/* line 1, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+html {
+  background-color: RGB(241, 241, 241);
+}
+
+/* line 4, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+p {
+  color: RGB(219, 69, 69);
+  font-family: "Asar", serif;
+}
+
+/* line 8, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+h1, h2, h3, h4 {
+  color: RGB(219, 69, 69);
+  font-family: "Roboto", sans-serif;
+}
+
+/* line 12, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+.link {
+  width: 250px;
+  display: inline-block;
+  border: 1px solid RGB(219, 69, 69);
+  background-color: RGB(255, 220, 106);
+  margin: 10px;
+  padding: 10px;
+}
+
+/* line 20, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+div.container {
+  padding: 20px;
+}
+/* line 22, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+div.container h1 {
+  padding-left: 10px;
+}
+
+/* line 25, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+section.form {
+  margin: 10px;
+}
+
+/* line 28, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+section.navbar {
+  padding: 20px;
+}
+/* line 30, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+section.navbar a {
+  color: RGB(219, 69, 69);
+  font-family: "Asar", serif;
+}
+/* line 33, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+section.navbar a:hover {
+  color: #555;
+}
+
+/* line 39, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+input {
+  font-family: "Asar", serif;
+  color: RGB(219, 69, 69);
+}
+
+/* line 43, /Users/Lucy/turing/4module/assessment/url_lockbox/app/assets/stylesheets/layout.sass */
+section.flash p {
+  padding: 10px;
+  background-color: white;
+  color: #555;
+  border-radius: 3px;
+}

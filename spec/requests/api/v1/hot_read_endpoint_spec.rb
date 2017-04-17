@@ -15,6 +15,6 @@ describe "Hot Reads Endpoint" do
     result = JSON.parse(response.body, :quirks_mode => true)
 
     expect(result.length).to eq(2)
-    expect(result[0].title).to eq('Why horses are the best')
+    expect(result[0]['title']).to eq('Why horses are the best')
   end
 end

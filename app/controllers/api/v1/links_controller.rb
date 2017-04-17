@@ -1,12 +1,17 @@
 class Api::V1::LinksController < ApplicationController
 
   def index
+    links = Link.all
+    render json: links.to_json
+  end
+
+  def show
     response = 'Hello World!'
     render json: response.to_json
   end
 
   def update
-    @link = Link.find(params[:id])    
+    @link = Link.find(params[:id])
     if @link.update_attributes(link_params)
       render json: @link
     else

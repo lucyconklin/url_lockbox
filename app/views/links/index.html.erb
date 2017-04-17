@@ -1,12 +1,14 @@
 <h1>All Links</h1>
 
-<%= form_for @link, url: links_path do |f| %>
+<section class="form">
+  <%= form_for @link, url: '/links' do |f| %>
 
-  Url: <%= f.url_field :url %>
-  Title: <%= f.text_field :title %>
-  <%= f.submit "Submit" %>
+    Url: <%= f.url_field :url %>
+    Title: <%= f.text_field :title %>
+    <%= f.submit "Submit", class:"button" %>
 
-<% end %>
+  <% end %>
+</section>
 
 <form id='filter'>
   <label>Filter:</label>
@@ -18,16 +20,18 @@
 <button class="show-all-unread">Show all unread</button>
 <button class="show-all">Show all</button>
 
-<% @links.each do |link| %>
-  <div class="link" id= <%=link.id %> >
-    <h2><%= link.title %></h2>
-    <p><%= link.url %></p>
-    <p class="read-status"><%= link.read %></p>
-    <% if !link.read %>
-      <button class="mark-as-read">Mark as read</button>
-    <% elsif link.read %>
-      <button class="mark-as-unread">Mark as unread</button>
-    <% end %>
-    <%= link_to 'Edit', edit_link_path(link) %>
-  </div>
-<% end %>
+<section class="links">
+  <% @links.each do |link| %>
+    <div class="link" id= <%=link.id %> >
+      <h2><%= link.title %></h2>
+      <p><%= link.url %></p>
+      <p class="read-status"><%= link.read %></p>
+      <% if !link.read %>
+        <button class="mark-as-read">Mark as read</button>
+      <% elsif link.read %>
+        <button class="mark-as-unread">Mark as unread</button>
+      <% end %>
+      <%= link_to 'Edit', edit_link_path(link) %>
+    </div>
+  <% end %>
+</section>

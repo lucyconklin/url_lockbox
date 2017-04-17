@@ -19,7 +19,6 @@ function markAsRead(e) {
 }
 
 function updateLinkStatus(link) {
-  console.log('THIS')
   $(`.link#${link.id}`).find(".read-status").text(link.read);
 }
 

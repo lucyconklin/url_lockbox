@@ -13,7 +13,7 @@ class Api::V1::LinksController < ApplicationController
   def update
     @link = Link.find(params[:id])
     if @link.update_attributes(link_params)
-      @link.read_count += params[:read_count].to_i
+      @link.read_count += params[:count].to_i
       @link.save
       render json: @link
     else

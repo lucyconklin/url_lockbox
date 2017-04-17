@@ -20,12 +20,12 @@ function markAsRead(e) {
 
 function updateLinkStatus(link) {
   $(`.link#${link.id}`).find(".read-status").text(link.read);
+  $(`.link#${link.id}`).find("button").addClass('mark-as-unread');
+  $(`.link#${id}`).find("button").removeClass('mark-as-read');
+  $(`.link#${id}`).find("button").text('Mark as unread');
 }
 
 function updateButton(id) {
-  $(`.link#${id}`).find("button").removeClass('mark-as-read');
-  $(`.link#${id}`).find("button").addClass('mark-as-unread');
-  $(`.link#${id}`).find("button").text('Mark as unread');
 }
 
 function displayFailure(failureData){

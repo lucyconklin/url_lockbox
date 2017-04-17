@@ -1,7 +1,7 @@
 class Api::V1::LinksController < ApplicationController
 
   def index
-    links = Link.order(read_count: :asc)
+    links = Link.order(read_count: :desc)
     render json: links.to_json
   end
 

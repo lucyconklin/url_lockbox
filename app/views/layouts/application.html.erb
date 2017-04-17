@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>URLockBox</title>
+  <link href="https://fonts.googleapis.com/css?family=Asar|Roboto:400,700" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all'%>
   <%= javascript_include_tag 'application'%>
   <%= csrf_meta_tags %>
@@ -9,7 +10,7 @@
 <body>
   <section class="navbar">
   <% if current_user %>
-    <%= link_to "Sign Out", '/signout', method: 'delete' %>
+    <%= link_to "Sign Out", '/signout', method: 'delete', class:"sign-in" %>
   <% end %>
 </section>
 

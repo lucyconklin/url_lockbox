@@ -1,22 +1,26 @@
 <h1>All Links</h1>
 
-<%= form_for @link, url: '/links' do |f| %>
+<section class="form">
+  <%= form_for @link, url: '/links' do |f| %>
 
-  Url: <%= f.url_field :url %>
-  Title: <%= f.text_field :title %>
-  <%= f.submit "Submit" %>
+    Url: <%= f.url_field :url %>
+    Title: <%= f.text_field :title %>
+    <%= f.submit "Submit", class:"button" %>
 
-<% end %>
+  <% end %>
+</section>
 
-<% @links.each do |link| %>
-  <div class="link">
-    <h2><%= link.title %></h2>
-    <p><%= link.url %></p>
-    <% if link.read %>
-      <button>Mark as Unread</button>
-    <% elsif !link.read %>
-      <button>Mark as read</button>
-    <% end %>
-    <%= link_to 'Edit', "/links/#{link.id}/edit" %>
-  </div>
-<% end %>
+<section class="links">
+  <% @links.each do |link| %>
+    <div class="link">
+      <h2><%= link.title %></h2>
+      <p><%= link.url %></p>
+      <% if link.read %>
+        <button>Mark as Unread</button>
+      <% elsif !link.read %>
+        <button>Mark as read</button>
+      <% end %>
+      <%= button_to 'Edit', edit_link_path(link), class:"button" %>
+    </div>
+  <% end %>
+</section>

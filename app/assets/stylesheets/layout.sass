@@ -1,5 +1,47 @@
 html
-  background-color: blanchedalmond
+  background-color: RGB(241, 241, 241)
 
 p
   color: $red
+  font-family: $main-font
+
+h1, h2, h3, h4
+  color: $red
+  font-family: $header-font
+
+.link
+  width: 250px
+  display: inline-block
+  border: 1px solid $red
+  background-color: $yellow
+  margin: 10px
+  padding: 10px
+
+div.container
+  padding: 20px
+  h1
+    padding-left: 10px
+
+section.form
+  margin: 10px
+
+section.navbar
+  padding: 20px
+  a
+    color: $red
+    font-family: $main-font
+  a:hover
+    color: #555
+
+.sign-in
+  @extend button
+
+input
+  font-family: $main-font
+  color: $red
+
+section.flash p
+  padding: 10px
+  background-color: white
+  color: #555
+  border-radius: 3px

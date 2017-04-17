@@ -10,9 +10,13 @@
 
 <form id='filter'>
   <label>Filter:</label>
-  <input class='search-box'></input>
+  <input name="search-box" class='search-box'></input>
   <button class='search-submit'>Search</button>
 </form>
+
+<button class="show-all-read">Show all read</button>
+<button class="show-all-unread">Show all unread</button>
+<button class="show-all">Show all</button>
 
 <% @links.each do |link| %>
   <div class="link" id= <%=link.id %> >

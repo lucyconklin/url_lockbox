@@ -37,4 +37,5 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem 'selenium-webdriver', '~> 2.53.4'
   gem 'rails-controller-testing'
+  gem 'mocha'
 end

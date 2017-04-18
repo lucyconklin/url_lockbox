@@ -1,6 +1,8 @@
 class LinksController < ApplicationController
 
   def index
+    Link.assign_hot_reads
+    Link.assign_top_link
     @link = Link.new
     @links = current_user.links || ''
   end

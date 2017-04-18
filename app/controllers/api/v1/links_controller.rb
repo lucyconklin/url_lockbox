@@ -6,7 +6,6 @@ class Api::V1::LinksController < ApplicationController
       hot_read.count += link.read_count
       hot_read.save
     end
-    binding.pry
     hot_reads = HotRead.current_hotreads
     render json: hot_reads.to_json
   end

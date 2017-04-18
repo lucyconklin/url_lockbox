@@ -9,15 +9,22 @@ class Link < ActiveRecord::Base
 
   belongs_to :user
 
-  def self.current_top_link_id
-    self.order(read_count: :desc).limit(1).pluck(:id)[0]
+  def self.assign_top_link
+    links = self.find_by(popularity: "top-link")
+    if links != nil
+      links.update_attributes(popularity: 'none')
+    end
+    hot_read = HotRead.current_top_link
+    Link.find_by(url: hot_read.url).update_attributes(popularity: 'top_link')
   end
 
-  def self.current_hotlink_ids
-    self.order(read_count: :desc).limit(10).pluck(:id)
-  end
-
-  def self.current_hotlinks
-    self.order(read_count: :desc).limit(10)
+  def self.assign_hot_reads
+    links = self.find_by(popularity: "hot_read")
+    if links != nil
+      links.update_attributes(popularity: 'none')
+    end
+    HotRead.current_hotreads.each do |hot_read|
+      Link.find_by(url: hot_read.url).update_attributes(popularity: 'hot_read')
+    end
   end
 end

@@ -26,6 +26,8 @@ function updateButton(link) {
   $(`.link#${link.id}`).find("button").removeClass('mark-as-unread');
   $(`.link#${link.id}`).find("button").addClass('mark-as-read');
   $(`.link#${link.id}`).find("button").text('Mark as read');
+  $(`.link#${link.id}`).removeClass('link-true').addClass('link-false');
+
 }
 
 function displayFailure(failureData){

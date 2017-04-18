@@ -11,21 +11,13 @@ function markAsRead(e) {
   $.ajax({
     type: "PATCH",
     url: "/api/v1/links/" + linkId,
-    data: { read: true, count: 1 },
+    data: { read: true, count: 1 }
   }).then((link) => {
-    updateButton(link.id);
-    updateLinkStatus(link);
+    $(`.link#${link.id}`).find(".read-status").text(link.read);
+    $(`.link#${link.id}`).find("button").addClass('mark-as-unread').removeClass('mark-as-read');
+    $(`.link#${link.id}`).find("button").text('Mark as unread');
+    $(`.link#${link.id}`).removeClass('link-false').addClass('link-true');
   }).fail(displayFailure);
-}
-
-function updateLinkStatus(link) {
-  $(`.link#${link.id}`).find(".read-status").text(link.read);
-  $(`.link#${link.id}`).find("button").addClass('mark-as-unread');
-  $(`.link#${id}`).find("button").removeClass('mark-as-read');
-  $(`.link#${id}`).find("button").text('Mark as unread');
-}
-
-function updateButton(id) {
 }
 
 function displayFailure(failureData){

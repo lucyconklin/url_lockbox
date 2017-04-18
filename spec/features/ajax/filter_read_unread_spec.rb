@@ -20,14 +20,14 @@ RSpec.describe "user can filter read and unread links", :js => :true do
   scenario "by clicking on 'show unread'" do
     click_on 'Show all read'
 
-    expect(page).to have_content(@link2.title)
-    expect(page).not_to have_content(@link.title)
+    expect(page).to have_content(@link.title)
+    expect(page).not_to have_content(@link2.title)
   end
 
   scenario "by clicking on 'show read'" do
     click_on 'Show all unread'
 
-    expect(page).to have_content(@link.title)
-    expect(page).not_to have_content(@link2.title)
+    expect(page).to have_content(@link2.title)
+    expect(page).not_to have_content(@link.title)
   end
 end

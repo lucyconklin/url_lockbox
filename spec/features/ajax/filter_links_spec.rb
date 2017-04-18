@@ -19,7 +19,7 @@ RSpec.describe "can filter links", :js => :true do
     click_on 'Submit'
 
     within('#filter') do
-      fill_in "search-box", with: "cookies"
+      fill_in "search-box", with: "cookie"
     end
 
     click_on "Search"
@@ -48,7 +48,7 @@ RSpec.describe "can filter links", :js => :true do
     click_on 'Submit'
 
     within('#filter') do
-      fill_in "search-box", with: "CoOkIeS"
+      fill_in "search-box", with: "CoOkIe"
     end
 
     click_on "Search"

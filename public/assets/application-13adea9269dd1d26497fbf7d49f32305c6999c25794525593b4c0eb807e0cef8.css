@@ -1,0 +1,86 @@
+button, .button, .link a.link-edit, .sign-in {
+  padding: 8px 10px;
+  border: 1px solid RGB(102, 102, 102);
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-size: 16px;
+  margin: 10px;
+}
+
+button:hover, .button:hover, .link a.link-edit:hover, .sign-in:hover {
+  background-color: RGB(219, 69, 69);
+  color: #fff;
+}
+
+html {
+  background-color: RGB(241, 241, 241);
+}
+
+p {
+  color: RGB(219, 69, 69);
+  font-family: "Asar", serif;
+}
+
+h1, h2, h3, h4 {
+  color: RGB(219, 69, 69);
+  font-family: "Roboto", sans-serif;
+}
+
+.link {
+  width: 30%;
+  display: inline-block;
+  border: 1px solid RGB(219, 69, 69);
+  background-color: RGB(255, 220, 106);
+  margin: 10px;
+  padding: 10px;
+}
+
+.link a {
+  text-decoration: none;
+}
+
+.link-true {
+  background-color: #eee;
+  border-color: #555;
+  color: #555;
+}
+.link-true h2 {
+  color: #555;
+}
+.link-true p {
+  color: #555;
+}
+
+div.container {
+  padding: 20px;
+}
+div.container h1 {
+  padding-left: 10px;
+}
+
+section.form {
+  margin: 10px;
+}
+
+section.navbar {
+  padding: 20px;
+}
+section.navbar a {
+  color: RGB(219, 69, 69);
+  font-family: "Asar", serif;
+}
+section.navbar a:hover {
+  color: #555;
+}
+
+input {
+  font-family: "Asar", serif;
+  color: RGB(219, 69, 69);
+}
+
+section.flash p {
+  padding: 10px;
+  background-color: white;
+  color: #555;
+  border-radius: 3px;
+}

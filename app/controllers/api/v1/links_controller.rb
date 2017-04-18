@@ -1,7 +1,7 @@
 class Api::V1::LinksController < ApplicationController
 
   def index
-    links = Link.order(read_count: :desc)
+    links = Link.current_hotlinks
     render json: links.to_json
   end
 

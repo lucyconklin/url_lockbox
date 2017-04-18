@@ -1,8 +1,14 @@
 class Api::V1::LinksController < ApplicationController
 
   def index
-    links = Link.current_hotlinks
-    render json: links.to_json
+    Link.all.each do |link|
+      hot_read = HotRead.find_or_create_by(url: link.url)
+      hot_read.count += link.read_count
+      hot_read.save
+    end
+    binding.pry
+    hot_reads = HotRead.current_hotreads
+    render json: hot_reads.to_json
   end
 
   def show

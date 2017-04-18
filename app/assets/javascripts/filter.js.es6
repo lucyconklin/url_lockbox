@@ -9,6 +9,6 @@ function filterLinks(e) {
   var $links = $('.link');
 
   $links.hide().filter(function(){
-    return $(this).find('h2').text().toUpperCase().includes(filter);
+    return $(this).find('h2').text().toUpperCase().includes(filter) || $(this).find('.link-url').text().toUpperCase().includes(filter);
   }).show()
 }

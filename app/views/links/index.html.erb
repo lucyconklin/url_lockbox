@@ -36,7 +36,7 @@
       <% elsif link.read %>
         <button class="mark-as-unread">Mark as unread</button>
       <% end %>
-      <%= link_to 'Edit', edit_link_path(link) %>
+      <%= link_to 'Edit', edit_link_path(link), class:'link-edit' %>
     </div>
   <% end %>
 </section>

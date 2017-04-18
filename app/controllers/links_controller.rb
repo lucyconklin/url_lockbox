@@ -1,8 +1,10 @@
 class LinksController < ApplicationController
 
   def index
-    Link.assign_hot_reads
-    Link.assign_top_link
+    if Link.all.count != 0
+      Link.assign_hot_reads
+      Link.assign_top_link
+    end
     @link = Link.new
     @links = current_user.links || ''
   end

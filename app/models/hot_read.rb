@@ -8,4 +8,8 @@ class HotRead < ActiveRecord::Base
   def self.current_top_link
     self.order(count: :desc).limit(1)[0]
   end
+
+  def update
+    count = Link.where(url: url).pluck(:read_count).reduce(:+)
+  end
 end

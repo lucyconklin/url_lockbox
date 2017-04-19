@@ -4,10 +4,16 @@ class Link < ActiveRecord::Base
   validates :title, presence: true
   validates :url, presence: true
   validates :url, :url => true
+  before_create :create_hotread
 
   validates_uniqueness_of :url, scope: :user_id
 
   belongs_to :user
+
+  def create_hotread
+    hot_read = HotRead.find_or_create_by(url: url)
+    hot_read.update
+  end
 
   def self.assign_top_link
     links = self.find_by(popularity: "top-link")

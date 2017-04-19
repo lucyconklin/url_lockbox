@@ -1,7 +1,12 @@
 class LinksController < ApplicationController
 
   def index
-    if Link.all.count != 0
+    if Link.all.count > 0
+      Link.all.each do |link|
+        hot_read = HotRead.find_or_create_by(url: link.url)
+        hot_read.count += link.read_count
+        hot_read.save
+      end
       Link.assign_hot_reads
       Link.assign_top_link
     end

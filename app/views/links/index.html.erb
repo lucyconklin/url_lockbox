@@ -29,8 +29,8 @@
         <h4 class='hot-read'>Hot Read!</h4>
       <% end %>
       <h2><%= link.title %></h2>
-      <a href= <%= link.url %> class="link-url"><%= link.url %></a>
-      <p class="read-status"><%= link.read %></p>
+      <a href= <%= link.url %> class="link-url"><span class="hide"><%= link.url %></span>Link</a>
+      <p class="read-status">read: <%= link.read %></p>
       <% if !link.read %>
         <button class="mark-as-read">Mark as read</button>
       <% elsif link.read %>
